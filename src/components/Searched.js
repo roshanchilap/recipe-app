@@ -10,7 +10,6 @@ function Searched() {
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}&number=9`
     );
     const recipes = await data.json();
-    console.log(recipes.results);
     setResult(recipes.results);
   };
 
