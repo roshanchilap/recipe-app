@@ -17,15 +17,12 @@ function Recipe() {
     const detailData = await data.json();
     setDetails(detailData);
   };
-
   useEffect(() => {
     recipeDetails();
-    console.log(details);
   }, [params.name]);
-
   return (
     <DetailWrapper>
-      <div>
+      <div key={details.id}>
         <h2>{details.title}</h2>
         <img src={details.image} alt={details.title} />
       </div>
@@ -55,7 +52,7 @@ function Recipe() {
         {active === "Ingredients" && (
           <ul>
             {details.extendedIngredients.map((ingredient) => (
-              <li>{ingredient.original}</li>
+              <li key={ingredient.id}>{ingredient.original}</li>
             ))}
           </ul>
         )}
