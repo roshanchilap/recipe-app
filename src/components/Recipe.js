@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
-import { act } from "react-dom/test-utils";
 
 function Recipe() {
   let params = useParams();
@@ -19,7 +18,8 @@ function Recipe() {
   };
   useEffect(() => {
     recipeDetails();
-  }, [params.name]);
+  }, []);
+
   return (
     <DetailWrapper>
       <div key={details.id}>

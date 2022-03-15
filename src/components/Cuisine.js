@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useParams, Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 function Cuisine() {
   const [cuisine, setCuisine] = useState([]);
@@ -16,7 +15,6 @@ function Cuisine() {
 
   useEffect(() => {
     getCuisine(params.type);
-    console.log(cuisine);
   }, [params.type]);
 
   return (

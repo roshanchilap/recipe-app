@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function Searched() {
   const [result, setResult] = useState([]);
@@ -16,7 +16,6 @@ function Searched() {
 
   useEffect(() => {
     getResult(params.search);
-    console.log(result);
   }, [params.search]);
 
   return (
