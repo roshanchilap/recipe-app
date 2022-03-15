@@ -31,6 +31,9 @@ const List = styled.div`
   display: flex;
   justify-content: center;
   margin: 2rem 0rem;
+  @media (max-width: 768px) {
+    width: 30rem;
+  }
 `;
 const Slink = styled(NavLink)`
   display: flex;
@@ -59,6 +62,15 @@ const Slink = styled(NavLink)`
     svg,
     h4 {
       color: white;
+    }
+  }
+  @media (max-width: 768px) {
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+    right: 4rem;
+    h4 {
+      display: none;
     }
   }
 `;

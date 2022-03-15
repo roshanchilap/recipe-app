@@ -65,6 +65,9 @@ function Veggie() {
 
 const Wrapper = styled.div`
   margin: 4rem 0rem;
+  @media (max-width: 768px) {
+    width: 26rem;
+  }
 `;
 
 const Card = styled.div`
@@ -73,7 +76,16 @@ const Card = styled.div`
   overflow: hidden;
   position: relative;
   min-width: 15rem;
-
+  @media (max-width: 768px) {
+    min-height: 7rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+    min-width: 7rem;
+    p {
+      visibility: hidden;
+    }
+  }
   img {
     border-radius: 2rem;
     position: absolute;

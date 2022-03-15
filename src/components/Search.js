@@ -35,6 +35,11 @@ const FormStyle = styled.form`
   div {
     width: 100%;
   }
+  @media (max-width: 768px) {
+    position: relative;
+    right: 15rem;
+    width: 100%;
+  }
 
   input {
     border: none;

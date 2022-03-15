@@ -50,11 +50,13 @@ function Recipe() {
           </InstructionWrapper>
         )}
         {active === "Ingredients" && (
-          <ul>
-            {details.extendedIngredients.map((ingredient) => (
-              <li key={ingredient.id}>{ingredient.original}</li>
-            ))}
-          </ul>
+          <InstructionWrapper>
+            <ul>
+              {details.extendedIngredients.map((ingredient) => (
+                <li key={ingredient.id}>{ingredient.original}</li>
+              ))}
+            </ul>
+          </InstructionWrapper>
         )}
       </Info>
     </DetailWrapper>
@@ -78,10 +80,29 @@ const DetailWrapper = styled.div`
   ul {
     margin-top: 2rem;
   }
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    img {
+      height: 15rem;
+      width: 15rem;
+    }
+  }
 `;
 const InstructionWrapper = styled.div`
   margin-top: 2rem;
-
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8rem;
+    position: relative;
+    right: 23rem;
+  }
+  p {
+    width: 20rem;
+  }
+  ul {
+    width: 20rem;
   }
 `;
 const Button = styled.button`
@@ -99,6 +120,15 @@ const Info = styled.div`
   margin-left: 10rem;
   line-height: 2rem;
   font-weight: 400;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    height: 5rem;
+    width: 10rem;
+    position: relative;
+    right: 10rem;
+    margin-top: 3rem;
+  }
 `;
 
 export default Recipe;
