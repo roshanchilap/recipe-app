@@ -28,8 +28,8 @@ function Cuisine() {
     >
       {cuisine.map((recipe) => {
         return (
-          <SLink to={"/recipe/" + recipe.id}>
-            <Card key={recipe.id}>
+          <SLink to={"/recipe/" + recipe.id} key={recipe.id}>
+            <Card>
               <img src={recipe.image} alt={recipe.title} />
               <h4>{recipe.title}</h4>
             </Card>
