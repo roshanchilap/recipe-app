@@ -9,16 +9,16 @@ function Recipe() {
 
   const [active, setactive] = useState("Instructions");
 
-  const recipeDetails = async () => {
-    const data = await fetch(
-      `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`
-    );
-    const detailData = await data.json();
-    setDetails(detailData);
-  };
   useEffect(() => {
+    const recipeDetails = async () => {
+      const data = await fetch(
+        `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`
+      );
+      const detailData = await data.json();
+      setDetails(detailData);
+    };
     recipeDetails();
-  }, []);
+  }, [params.name]);
 
   return (
     <DetailWrapper>
